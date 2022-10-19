@@ -8,7 +8,7 @@
 
             call #and_operation;
 
-            OR R5, R6;
+            bis R5, R6;
 
             mov.w R6, &203Ch;
 
