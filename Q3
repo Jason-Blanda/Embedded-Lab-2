@@ -1,0 +1,34 @@
+;-------------------------------------------------------------------------------
+; Main loop here
+;-------------------------------------------------------------------------------
+
+			mov.b #ABC1h, R4;
+			mov.b #0010h, R5;
+			mov.b #0001h, R6;
+
+			and R6, R4;
+			and R6, R5;
+
+			cmp R4, R6;
+			jeq R4EqualToR6;
+			jne R4NotEqualToR6;
+			jmp $;
+
+R4EqualToR6:
+			cmp R5, R6;
+			jeq R5EqualToR6;
+			jne Or;
+			jmp $;
+
+R4NotEqualToR6:
+			cmp R5, R6;
+			jeq Or;
+			jmp $;
+
+R5EqualtoR6:
+			mov.w #0ff0h, R9;
+			jmp $;
+
+Or:
+			mov.w R9, R10;
+			inv R10;
